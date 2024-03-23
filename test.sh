@@ -1,4 +1,4 @@
-  #!/usr/env bash
+#!/usr/env bash
 
 # Banner
 echo -e ""
@@ -17,26 +17,44 @@ read -p "Enter your option : " option
 
 case "$option" in
     1)
-        echo -e "C"
-        echo -e "C++"
-        echo -e "Python"
-        echo -e "JS"
-
+        echo -e "[1] C"        
+        echo -e "[2] Python"
+        echo -e "[3] JS"
+        while true; do
+        read -p "Give a valid value : " pl
+        case '$pl' in
+            1)
+                echo -e "Installinhg C..."
+                sudo apt install clang
+                ;;
+            2)
+                echo -e "Installing Python"
+                sudo apt install python
+                ;;
+            3)
+                echo -e "Installing JS"
+                sudo apt install java
+                ;;
+            *)
+                echo -e "Input cannot be empty! Enter a valid value again!"
+                ;;
+                esac
+                done
     2)
-        echo -e "Available Network Adapters"
-        echo -e "Monnitor Mode"
-            echo -e "ON"
-            echo -e "OFF"
+        echo -e "[1] Available Network Adapters"
+        echo -e "[2] Monnitor Mode"
+            echo -e "[1] ON"
+            echo -e "[2] OFF"
 
     3)
-        echo -e "VS code"
-        echo -e "Sublime text"
-        echo -e "Pycharm"
+        echo -e "[1] VS code"
+        echo -e "[2] Sublime text"
+        echo -e "[3] Pycharm"
     4)
         echo -e "Usefull Websites : "
-        echo -e "https://github.com/ZBTv1-0"
-        echo -e "https://www.nullbash.tk"
-        echo -e "https://youtube.com/machomoron"
+        echo -e "[1] https://github.com/ZBTv1-0"
+        echo -e "[2] https://www.nullbash.tk"
+        echo -e "[3] https://youtube.com/machomoron"
     0)
         echo -e "Thank you! Exiting ..."
     *)
